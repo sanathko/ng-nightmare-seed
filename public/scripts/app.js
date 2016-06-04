@@ -7,14 +7,20 @@ angular
     ])
     .config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/home');
+
 
         $stateProvider
+            .state('song',{
+                url:'/song',
+                controller: 'ReadSongCtrl',
+                templateUrl:'views/song.html'
+            })
             .state('home',{
                 url:'/home',
                 controller: 'HomeCtrl',
                 templateUrl:'views/home.html'
             })
+        $urlRouterProvider.otherwise('/home');
     }]);
 
 

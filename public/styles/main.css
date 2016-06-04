@@ -81,3 +81,18 @@ body {
 text-decoration: none;
 background-color: #eee;
 }
+
+.spacer{
+  padding-bottom: 40px;
+}
+
+pre{
+  background-color: white !important;
+  border: none !important;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif
+}
+
+pre.chords{
+  background-color: #00d6b2 !important;
+  color: white !important;
+}

@@ -1,0 +1,40 @@
+[Intro]
+-----------------------------
+Em | C | Bm | D
+Em | C | D  | Em
+G  | D | Em | D
+G  | D | Em | -
+Em | C | D  | Em
+[EndIntro]
+
+[Chorus]
+----------------------------------------------
+        Em         D           Bm        D
+Aeheala mal pipina deweta dige numba piyamenna
+    G          D             Bm          Em
+Pun poya daaka sanda wilasin muhuna penenna
+G             D             Bm          D
+Aeatha meatha kotheanaka ho kawuruth noena
+      G             D     Bm       Em
+Weata langa hidimin mang, ebi balannam
+[EndChorus]
+
+[Verse1]
+----------------------------------------------
+Em                Bm         D       Em
+Wathsunu theawuru gatha mata age nowenna
+D                        Bm           Em
+Wane pipunu malak lesata suwanda hamanna
+Em               Bm                     Em
+Omari bealum helawee muhuna bimata neamewe
+[EndVerse1]
+
+[Verse2]
+----------------------------------------------
+Em         Bm           D         Em
+Bahak nodi giyath ahaka bala seenasi
+D                           Bm        Em
+Matama himi yeai mage sitha nithara kiyawi
+Em                        Bm           Em
+Maga balamin seamada indi weata laga innam
+[EndVerse2]

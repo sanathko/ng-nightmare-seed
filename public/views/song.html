@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div ng-repeat="intro in introArray track by $index">
+            <pre class="chords">{{intro.chordLine}}</pre>
+        </div>
+        <div class="spacer"></div>
+        <div ng-repeat="chorus in chorusArray track by $index">
+            <span ng-if="chorus.type === 'chord'">
+                <pre class="chords">{{chorus.chordLine}}</pre>
+            </span>
+            <span ng-if="chorus.type !== 'chord'">
+                <pre>{{chorus.songLine}}</pre>
+            </span>
+        </div>
+        <div class="spacer"></div>
+        <div ng-repeat="verse1 in verse1Array track by $index">
+            <span ng-if="verse1.type === 'chord'">
+                <pre class="chords">{{verse1.chordLine}}</pre>
+            </span>
+            <span ng-if="verse1.type !== 'chord'">
+                <pre>{{verse1.songLine}}</pre>
+            </span>
+        </div>
+        <div class="spacer"></div>
+        <div ng-repeat="verse2 in verse2Array track by $index">
+            <span ng-if="verse2.type === 'chord'">
+                <pre class="chords">{{verse2.chordLine}}</pre>
+            </span>
+            <span ng-if="verse2.type !== 'chord'">
+                <pre>{{verse2.songLine}}</pre>
+            </span>
+        </div>
+    </div>
+</div>
