@@ -1,98 +1,157 @@
-/* Space out content a bit */
-body {
-    padding-bottom: 20px;
+.container{
+  width:80%;
+  display: block;
+  margin: 20px;
+}
+#song-div{
+  background-color: #eee !important;
+  margin: 5px;
+  border-radius: 6px;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+h3{
+  margin-left: 20px;
+  font-size: 14px;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+hr{
+  clear: both;
+  background-color: #00d4b4;
+  height: 1px;
+  border-width: 0;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+
+footer{
+  height: 50px;
+}
+
+table{
+  /*margin-top: 5px;*/
+  /*margin-left: 30px;*/
+  /*margin-right: 30px;*/
+  /*background-color: #00b3ee;*/
+  /*border: 1px solid black;*/
+  border-collapse: collapse;
+  /*width: 90%;*/
+}
+tr{
+  /*border: 1px solid black;*/
+  /*border-bottom: 1px solid #ddd;*/
+}
+tr:nth-child(even) {
+  /*background-color: #f2f2f2;*/
+
+}
+tr:nth-child(odd) {
+  /*background-color: #e3e3e3;*/
   line-height: 40px;
-  padding-bottom: 19px;
+  color: #00b3ee;
+}
+td{
+  padding-top: 4px;
+  /*margin-right: 20px;*/
+  /*border: 1px solid black;*/
+  width:auto;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+td span {
+  color: #030301;
+  border-radius: 10px;
+  background-color: #00d4b4;
+  padding: 5px;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
+/*Tablets/IPads Tables portrait landscape*/
+@media only screen and (min-width: 961px) {
+  .container{
+    width:80%;
+    transition: width 2s;
+    margin:20px;
   }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
+  table{
+    padding: 20px;
+    margin:50px;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
+  td {
+    font-size: 22px;
+    width:auto;
+    white-space: nowrap;
+    padding-right: 3px;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  h3{
+    font-size: 24px;
+    margin-left:50px;
   }
 }
 
-.nav>li.active>a {
-text-decoration: none;
-background-color: #eee;
+
+/*Tablets/IPads Tables portrait landscape*/
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+  .container{
+    width:95%;
+    transition: width 2s;
+    margin:20px;
+  }
+  table{
+    padding: 19px;
+    margin:40px;
+  }
+  td {
+    font-size: 21px;
+    width:auto;
+    white-space: nowrap;
+    padding-right: 3px;
+  }
+  h3{
+    font-size: 23px;
+    margin-left:40px;
+  }
+}
+/*Smaller Tables portrait landscape*/
+@media only screen and (min-width: 569px) and (max-width: 767px) {
+  .container{
+    width:95%;
+    transition: width 2s;
+    margin:20px;
+  }
+  table{
+    padding: 20px;
+    margin:30px;
+  }
+  td {
+    font-size: 16px;
+    width:auto;
+    white-space: nowrap;
+    padding-right: 3px;
+  }
+  h3{
+    font-size: 18px;
+    margin-left:30px;
+  }
 }
 
-.spacer{
-  padding-bottom: 40px;
-}
-
-pre{
-  background-color: white !important;
-  border: none !important;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif
-}
-
-pre.chords{
-  background-color: #00d6b2 !important;
-  color: white !important;
+/*Smart phones portrait landscape*/
+@media only screen and (min-width: 240px) and (max-width: 568px) {
+  .container{
+    width:95%;
+    transition: width 2s;
+    margin:20px;
+    min-width: 242px;
+  }
+  table{
+    padding: 20px;
+    margin: 20px;
+  }
+  td {
+    font-size: 13px;
+    width:auto;
+    white-space: nowrap;
+    padding-right: 3px;
+  }
+  h3{
+    font-size: 15px;
+    margin-left: 20px;
+  }
 }

@@ -26,7 +26,7 @@ function writeMultipleLines(nightmare, input){
 
 function getTranslated(req, res){
     var Nightmare = require('nightmare');
-    var nightmare = Nightmare({ show: false});
+    var nightmare = Nightmare({ show: true});
     nightmare.goto('http://www.alllanguagetranslator.com/2014/12/english-to-sinhalese-conversion-english.html');
     return writeMultipleLines(nightmare, req.body.input)
         .wait('#translater')

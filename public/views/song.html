@@ -1,33 +1,33 @@
 <div class="container">
     <div class="row">
         <div ng-repeat="intro in introArray track by $index">
-            <pre class="chords">{{intro.chordLine}}</pre>
+            <div ng-bind-html="intro.chordLine"></div>
         </div>
         <div class="spacer"></div>
         <div ng-repeat="chorus in chorusArray track by $index">
             <span ng-if="chorus.type === 'chord'">
-                <pre class="chords">{{chorus.chordLine}}</pre>
+                <div ng-bind-html="chorus.chordLine"></div>  - {{chorus.length}}
             </span>
             <span ng-if="chorus.type !== 'chord'">
-                <pre>{{chorus.songLine}}</pre>
+                {{chorus.songLine}} - {{chorus.length}}
             </span>
         </div>
         <div class="spacer"></div>
         <div ng-repeat="verse1 in verse1Array track by $index">
             <span ng-if="verse1.type === 'chord'">
-                <pre class="chords">{{verse1.chordLine}}</pre>
+                <div ng-bind-html="verse1.chordLine"></div>  - {{verse1.length}}
             </span>
             <span ng-if="verse1.type !== 'chord'">
-                <pre>{{verse1.songLine}}</pre>
+                {{verse1.songLine}}  - {{verse1.length}}
             </span>
         </div>
         <div class="spacer"></div>
         <div ng-repeat="verse2 in verse2Array track by $index">
             <span ng-if="verse2.type === 'chord'">
-                <pre class="chords">{{verse2.chordLine}}</pre>
+                <div ng-bind-html="verse2.chordLine"></div> - {{verse2.length}}
             </span>
             <span ng-if="verse2.type !== 'chord'">
-                <pre>{{verse2.songLine}}</pre>
+                {{verse2.songLine}} - {{verse2.length}}
             </span>
         </div>
     </div>

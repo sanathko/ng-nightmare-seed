@@ -1,0 +1,57 @@
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-lg-12  col-sm-12">
+                <h1 class="page-header">CONVERT SONGS</h1>
+            </div>
+        </div>
+        <div class="row" id="home">
+            <div class="col-lg-12 col-sm-12" id="line-chart">
+                <div class="form-group">
+                    <label for="song">Song:</label>
+                    <textarea class="form-control" rows="10" id="song" ng-model="songObj.input"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6  col-sm-6">
+                <button id="convertSongGrid" type="button" class="btn btn-block" ng-click="convertToGrid();">Convert</button>
+            </div>
+            <div class="col-lg-6  col-sm-6">
+                <button id="gotoConvertedHtml" type="button" class="btn btn-block" ng-click="gotoAnchor('convertedHtml');">Go to HTML</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12  col-sm-12">
+                <table ng-repeat="songLine in songArray">
+                    <tr>
+                        <td ng-repeat="column in songLine.columns">
+                            <input id="input-chord-{{$index}}" name="input-chord-{{$index}}" ng-model="column.chord" style="width:75%;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-repeat="column in songLine.columns">
+                            <input id="input-word-{{$index}}" name="input-word-{{$index}}" ng-model="column.word" style="width:75%;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row" id="convertedHtml">
+            <div class="col-lg-6  col-sm-6">
+                <button id="convertSongHTML" type="button" class="btn btn-block" ng-click="convertToSongHtml();">Convert to song HTML</button>
+            </div>
+            <div class="col-lg-6  col-sm-6">
+                <button id="gotoSong" type="button" class="btn btn-block" ng-click="gotoAnchor('home');">Go to song</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12  col-sm-12">
+                <!--<div ng-bind-html="songHtml"></div>-->
+                <textarea class="form-control" rows="10" id="songHtml" ng-model="songHtml"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
