@@ -5,6 +5,7 @@ angular
         'ui.bootstrap',
         'angular-loading-bar',
         'ngSanitize'
+        //'duScroll'
     ])
     .config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider) {
         $stateProvider
@@ -33,7 +34,12 @@ angular
                 controller: 'Test2Ctrl',
                 templateUrl:'views/test2.html'
             })
-        $urlRouterProvider.otherwise('/test1');
+            .state('test3',{
+              url:'/test3',
+              controller: 'Test3Ctrl',
+              templateUrl:'views/test3.html'
+            })
+        //$urlRouterProvider.otherwise('/test1');
     }]);
 
 
