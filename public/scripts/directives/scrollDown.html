@@ -1,13 +1,15 @@
 <div style="z-index: 10000;position: fixed;bottom: 50px;text-align: center;padding: 0px 10px;background-color: #1b6d85;border: #b7dee8 solid 5px;border-radius: 5px;">
-    <!--<div>-->
-        <!--<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>-->
-    <!--</div>-->
+
+    <div>
+        <rzslider rz-slider-model="priceSlider"></rzslider>
+    </div>
+
     <table style="height: 100%;margin: 0;">
         <tr>
-            <td><button id="back" class="glyphicon glyphicon-backward" ng-click="vm.scrollSmoothToTop('div')"></button></td>
-            <td><button id="play" class="glyphicon glyphicon-triangle-right" ng-if="vm.showPlay" ng-click="vm.scrollSmoothToBottom('div')"></button></td>
-            <td><button id="stop" class="glyphicon glyphicon-stop" ng-if="vm.showStop" ng-click="vm.scrollStop('div')"></button></td>
-            <td><button id="forward" class="glyphicon glyphicon-forward" ng-click="vm.scrollSmoothToBottom('div')"></button></td>
+            <td><button id="back" class="glyphicon glyphicon-backward" ng-click="vm.scrollSmoothToTop()"></button></td>
+            <td><button id="play" class="glyphicon glyphicon-triangle-right" ng-if="vm.showPlay" ng-click="vm.scrollSmoothPlay()"></button></td>
+            <td><button id="stop" class="glyphicon glyphicon-stop" ng-if="vm.showStop" ng-click="vm.scrollStop()"></button></td>
+            <td><button id="forward" class="glyphicon glyphicon-forward" ng-click="vm.scrollSmoothToBottom()"></button></td>
         </tr>
     </table>
 </div>

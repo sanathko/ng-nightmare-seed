@@ -2,15 +2,7 @@
  * Created by sanathkodikara on 22/02/2017.
  */
 
-angular.module('ngSeedApp').directive('scrollDown', function()  {
-  var linker = function(scope, element, attrs) {
-
-    element.bind('click', function(){
-      console.log('moving');
-      console.log( $( this).text() );
-      $(this).animate({top: '+=150'});
-    });
-  };
+angular.module('ngSeedApp').directive('scrollDown', function () {
   return {
     restrict: 'AE',
     replace: true,
@@ -19,63 +11,84 @@ angular.module('ngSeedApp').directive('scrollDown', function()  {
     scope: {
       test: '='
     },
-    controller: function($scope, $document) {
+    controller: function ($scope, $document) {
+      var scrollPlayTimeout = 500;
+      $scope.priceSlider = 150;
       console.log('directive loaded');
       const vm = this;
       vm.showPlay = true;
       vm.showStop = false;
 
-      vm.play = function() {
-        console.log('play');
+      $scope.$watch("priceSlider",
+          _.debounce(function handleChange(newValue) {
+            if (newValue < 10) {
+              newValue = 1
+            } else {
+              newValue = newValue / 10;
+            }
+            vm.scrollStop();
+            scrollPlayTimeout = 500 * (newValue * 10);
+            console.log("priceSlider:", newValue, " scrollPlayTimeout ", scrollPlayTimeout);
+            $('html, body').stop();
+            $('html, body').clearQueue();
+            $('html, body').animate({
+              scrollTop: $(document).height()
+            }, scrollPlayTimeout, function () {
+              console.log('scroll play completed');
+              vm.showPlay = true;
+              vm.showStop = false;
+            });
+          }, 1000)
+      );
+
+      $scope.$on("$destroy",
+          function handleDestroyEvent() {
+            console.log("DESTROYED.....");
+            $('html, body').clearQueue();
+          }
+      );
+
+      vm.scrollSmoothPlay = function () {
         vm.showPlay = false;
         vm.showStop = true;
-        //resume scrolling from the stopped position
-      };
-
-      vm.stop = function() {
-        console.log('stop');
-        vm.showPlay = true;
-        vm.showStop = false;
-        //$document.duScrollCancelOnEvents
-        //stops scrolling
-      };
-
-      vm.scrollSmoothToBottom = function(id) {
-        var div = document.getElementById(id);
-        //console.log(div, div.scrollHeight , '  ' , div.clientHeight, ' ', $(document).height());
-        var elem = $document.find('#'+id);
-        console.log(elem);
-        //elem.animate({top: '+=150'});
         $('html, body').animate({
-          scrollTop: $("#bottom").offset().top
-        }, 500);
-      };
-
-      vm.scrollSmoothToTop = function(id) {
-        var elem = $document.find('#'+id);
-        elem.animate({
-          scrollTop: 0
-        }, 500);
-      };
-
-      vm.scrollStop = function(id) {
-        var elem = $document.find('#'+id);
-        elem.stop();
-      };
-
-
-      vm.toTheTop = function() {
-        $document.scrollTopAnimated(0, 5000).then(function() {
-          console && console.log('You just scrolled to the top!');
+          scrollTop: $(document).height()
+        }, 5000, function () {
+          console.log('scroll play completed');
+          vm.showPlay = true;
+          vm.showStop = false;
         });
       };
 
-      vm.toTheBottom = function() {
-        var section3 = angular.element(document.getElementById('bottom'));
-        console.log(section3);
-        $document.scrollToElementAnimated(section3, 0, 5000);
+      vm.scrollSmoothToBottom = function () {
+        vm.showPlay = false;
+        vm.showStop = true;
+        $('html, body').animate({
+          scrollTop: $(document).height()
+        }, 500, function () {
+          console.log('scroll to BOTTOM completed');
+          vm.showPlay = true;
+          vm.showStop = false;
+        });
       };
 
+      vm.scrollSmoothToTop = function () {
+        vm.showPlay = false;
+        vm.showStop = true;
+        $('html, body').animate({
+          scrollTop: $("#top").offset().top
+        }, 500, function () {
+          console.log('scroll to TOP completed');
+          vm.showPlay = true;
+          vm.showStop = false;
+        });
+      };
+
+      vm.scrollStop = function () {
+        $('html, body').stop();
+        vm.showPlay = true;
+        vm.showStop = false;
+      };
     }
   }
 });

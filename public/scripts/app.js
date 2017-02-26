@@ -4,8 +4,8 @@ angular
         'ui.router',
         'ui.bootstrap',
         'angular-loading-bar',
-        'ngSanitize'
-        //'duScroll'
+        'ngSanitize',
+        'rzModule'
     ])
     .config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider) {
         $stateProvider
