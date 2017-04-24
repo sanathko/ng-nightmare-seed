@@ -39,6 +39,11 @@ angular
               controller: 'Test3Ctrl',
               templateUrl:'views/test3.html'
             })
+            .state('test4',{
+              url:'/test4',
+              controller: 'Test4Ctrl',
+              templateUrl:'views/test4.html'
+            })
         //$urlRouterProvider.otherwise('/test1');
     }]);
 
